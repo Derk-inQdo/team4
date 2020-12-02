@@ -27,7 +27,7 @@
   <body>
 
     <?php
-      $database = new PDO('mysql:host=HOSTNAME;dbname=rds01', 'admin', 'PASSWORD');
+      $database = new PDO('mysql:host=rds01-dev-cluster.cluster-cqn9de2vmwag.eu-west-1.rds.amazonaws.com;dbname=rds01', 'admin', 'team4team4');
       $statement = $database->query('SELECT * FROM `teams`');
       foreach ($statement->fetchAll() as $row) {
           echo sprintf('<h1>%s</h1>', $row['team_name']);
